@@ -71,3 +71,9 @@ print(get)
 </ul>
 
 **Warning: The files created by this library can still be read by others, eg. hackers, by using Jade Config, shelve or others. Don't store sensitive data like passwords or API Keys! It's certainly more secure than text files, but be careful!**
+
+## Changelog
+<hr>
+
+- [1.0.1] Patch fixing a small logging confusion
+- [1.0.0] Initial release
