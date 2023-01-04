@@ -19,6 +19,7 @@ file.db
 ## Usage
 <hr>
 Jade Config is very simple to use.
+
 **Download it with:**
 ```
 pip install jade-config
