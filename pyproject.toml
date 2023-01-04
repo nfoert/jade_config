@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jade_config"
-version = "1.0.0"
+version = "1.0.1"
 description = "A python package to quickly and easily make configs, or other things that your program needs to remember."
 readme = "README.md"
 authors = [{ name = "nfoert", email = "jadesoftware1@gmail.com" }]

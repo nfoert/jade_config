@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: jade-config
-Version: 1.0.0
+Version: 1.0.1
 Summary: A python package to quickly and easily make configs, or other things that your program needs to remember.
 Author-email: nfoert <jadesoftware1@gmail.com>
 Project-URL: Homepage, https://github.com/nfoert/jade_config
@@ -32,6 +32,7 @@ file.db
 ## Usage
 <hr>
 Jade Config is very simple to use.
+
 **Download it with:**
 ```
 pip install jade-config
