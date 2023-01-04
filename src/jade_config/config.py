@@ -26,7 +26,8 @@ class Config:
         db = shelve.open(self.name)
         db.close()
 
-        self.logAndPrint(f"Logging is True. Log is '{name}.log.txt'")
+        if log == True:
+            self.logAndPrint(f"Logging is True. Log is '{name}.log.txt'")
         self.logAndPrint("Initiated.")
     
     def logAndPrint(self, text):
