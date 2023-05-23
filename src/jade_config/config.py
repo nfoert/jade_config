@@ -9,6 +9,10 @@ class UnableToGetValue(Exception):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
 
+class UnableToRemoveKey(Exception):
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+
 
 class Config:
     '''
@@ -45,21 +49,35 @@ class Config:
         try:
             db = shelve.open(self.name)
             db[key] = value
+            db.close()
             self.logAndPrint(f"Set key '{key}' to value '{value}'")
             return True
 
         except:
-            self.logAndPrint("Unable to set value.")
-            raise UnableToSetValue("Unable to set the value.")
+            self.logAndPrint(f"Unable to set value '{value}' to key '{key}'")
+            raise UnableToSetValue(f"Unable to set value '{value}' to key '{key}'")
 
     def getValue(self, key):
         '''Gets the value of a key in the file.'''
         try:
             db = shelve.open(self.name)
             value = db[key]
+            db.close()
             self.logAndPrint(f"Got value '{value}' from key '{key}'")
             return value
 
         except:
-            self.logAndPrint("Unable to get value.")
-            raise UnableToGetValue("Unable to get the value.")
+            self.logAndPrint(f"Unable to get the value '{value}' from key '{key}'")
+            raise UnableToGetValue(f"Unable to get the value '{value}' from key '{key}'")
+        
+    def removeKey(self, key):
+        '''Removes a key from the file'''
+        try:
+            db = shelve.open(self.name)
+            del db[key]
+            db.close()
+            self.logAndPrint(f"Removed key '{key}'")
+
+        except:
+            self.logAndPrint(f"Unable to remove key '{key}'")
+            raise UnableToRemoveKey(f"Unable to remove key '{key}'")

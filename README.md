@@ -52,6 +52,12 @@ You can set more than one value per file. Just use different keys, or you'll ove
 ```
 You can use `.getValue` for any key in your file.
 
+**You can also remove a key from the file.**
+```
+>>> file.removeKey("username")
+[fileName] Removed key 'username'
+```
+
 **The full example**
 ```
 from jade_config import config
@@ -60,6 +66,8 @@ file = config.Config("test", True)
 file.setValue("username", "nfoert")
 get = file.getValue("username")
 print(get)
+
+file.removeKey("username")
 ```
 
 ## Future updates
@@ -75,5 +83,6 @@ print(get)
 ## Changelog
 <hr>
 
+- [1.1.1] [5/23/23] Made errors more descriptive, added `removeKey()`, and made the database correctly close after it's done being used.
 - [1.0.1] Patch fixing a small logging confusion
 - [1.0.0] Initial release
