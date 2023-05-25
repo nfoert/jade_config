@@ -67,8 +67,8 @@ class Config:
             return value
 
         except:
-            self.logAndPrint(f"Unable to get the value '{value}' from key '{key}'")
-            raise UnableToGetValue(f"Unable to get the value '{value}' from key '{key}'")
+            self.logAndPrint(f"Unable to get the value from key '{key}'")
+            raise UnableToGetValue(f"Unable to get the value from key '{key}'")
         
     def removeKey(self, key):
         '''Removes a key from the file'''

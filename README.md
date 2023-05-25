@@ -83,6 +83,7 @@ file.removeKey("username")
 ## Changelog
 <hr>
 
+- [1.1.2] [5/24/23] Fixed a bug where if you tried to `getValue()` a key that couldn't be found, It would throw an `UnboundLocalError`.
 - [1.1.1] [5/23/23] Made errors more descriptive, added `removeKey()`, and made the database correctly close after it's done being used.
 - [1.0.1] Patch fixing a small logging confusion
 - [1.0.0] Initial release
